@@ -1,0 +1,16 @@
+{
+	"Jogos": [
+		{
+			"Nome": "CSGO",
+			"Genero": "FPS"
+		},
+		{
+			"Nome": "DOTA2",
+			"Genero": "MOBA"
+		},
+		{
+			"Nome": "LOL",
+			"Genero": "MOBA"
+		}
+	]
+}
