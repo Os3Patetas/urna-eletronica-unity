@@ -1,16 +1,148 @@
 {
-	"Jogos": [
-		{
-			"Nome": "CSGO",
-			"Genero": "FPS"
-		},
-		{
-			"Nome": "DOTA2",
-			"Genero": "MOBA"
-		},
-		{
-			"Nome": "LOL",
-			"Genero": "MOBA"
-		}
-	]
+  "Jogos": [
+    {
+      "Nome": "Diablo3",
+      "Genero": "ARPG"
+    },
+    {
+      "Nome": "GrimDawn",
+      "Genero": "ARPG"
+    },
+    {
+      "Nome": "IncredibleAdventuresOfVanHelsing2",
+      "Genero": "ARPG"
+    },
+    {
+      "Nome": "PathOfExile",
+      "Genero": "ARPG"
+    },
+    {
+      "Nome": "TitanQuest",
+      "Genero": "ARPG"
+    },
+    {
+      "Nome": "Torchlight2",
+      "Genero": "ARPG"
+    },
+    {
+      "Nome": "Battlefield3",
+      "Genero": "FPS"
+    },
+    {
+      "Nome": "CallOfDutyMW3",
+      "Genero": "FPS"
+    },
+    {
+      "Nome": "CounterStrikeGlobalOffensive",
+      "Genero": "FPS"
+    },
+    {
+      "Nome": "Overwatch",
+      "Genero": "FPS"
+    },
+    {
+      "Nome": "QuakeChampions",
+      "Genero": "FPS"
+    },
+    {
+      "Nome": "Valorant",
+      "Genero": "FPS"
+    },
+    {
+      "Nome": "DragonBallZKakarot",
+      "Genero": "Luta"
+    },
+    {
+      "Nome": "GuiltyGearStrive",
+      "Genero": "Luta"
+    },
+    {
+      "Nome": "MortalKombatX",
+      "Genero": "Luta"
+    },
+    {
+      "Nome": "Sifu",
+      "Genero": "Luta"
+    },
+    {
+      "Nome": "StreetFighter5",
+      "Genero": "Luta"
+    },
+    {
+      "Nome": "Tekken7",
+      "Genero": "Luta"
+    },
+    {
+      "Nome": "FinalFantasyXIV",
+      "Genero": "MMORPG"
+    },
+    {
+      "Nome": "GuildWars2",
+      "Genero": "MMORPG"
+    },
+    {
+      "Nome": "Neverwinter",
+      "Genero": "MMORPG"
+    },
+    {
+      "Nome": "StarWarsTheOldRepublic",
+      "Genero": "MMORPG"
+    },
+    {
+      "Nome": "TheElderScrollsOnline",
+      "Genero": "MMORPG"
+    },
+    {
+      "Nome": "WorldOfWarcraft",
+      "Genero": "MMORPG"
+    },
+    {
+      "Nome": "battlerite",
+      "Genero": "MOBA"
+    },
+    {
+      "Nome": "Dota2",
+      "Genero": "MOBA"
+    },
+    {
+      "Nome": "HeroesOfNewerth",
+      "Genero": "MOBA"
+    },
+    {
+      "Nome": "HeroesOfTheStorm",
+      "Genero": "MOBA"
+    },
+    {
+      "Nome": "LeagueOfLegends",
+      "Genero": "MOBA"
+    },
+    {
+      "Nome": "Smite",
+      "Genero": "MOBA"
+    },
+    {
+      "Nome": "ChronoTrigger",
+      "Genero": "RPG"
+    },
+    {
+      "Nome": "EldenRing",
+      "Genero": "RPG"
+    },
+    {
+      "Nome": "GodOfWar",
+      "Genero": "RPG"
+    },
+    {
+      "Nome": "MassEffectLegendaryEdition",
+      "Genero": "RPG"
+    },
+    {
+      "Nome": "TheElderScrollsVSKyrim",
+      "Genero": "RPG"
+    },
+    {
+      "Nome": "TheWitcher3",
+      "Genero": "RPG"
+    }
+  ]
 }

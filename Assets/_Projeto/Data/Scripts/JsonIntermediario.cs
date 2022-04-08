@@ -10,8 +10,8 @@ namespace com.Icypeak.VotacaoJogo.Data
 {
     public static class JsonIntermediario
     {
-        public static string JsonFileName = "50Jogos";
-        [MenuItem("Jogos/Caio mama nois")]
+        public static string JsonFileName = "ListaJogos";
+        [MenuItem("Json/Sincronizar")]
         public static void SincronizarArquivosComJson()
         {
             string diretorioOutputObjetos = Path.Combine(Application.dataPath, "_Projeto", "Resources", "Objetos", "Jogo");

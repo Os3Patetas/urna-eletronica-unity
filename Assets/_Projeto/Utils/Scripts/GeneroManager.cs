@@ -12,10 +12,10 @@ namespace com.Icypeak.VotacaoJogo.Utils
         public static string[] Generos { get; private set; }
         public static string GeneroAtual => Generos[_genero];
         static int _genero = 0;
-        int genero
+        public static int GeneroPosArray
         {
             get => _genero;
-            set
+            private set
             {
                 _genero = value;
 
@@ -35,7 +35,20 @@ namespace com.Icypeak.VotacaoJogo.Utils
         void Awake() =>
            Generos = Diretor.ListaJogos.Select(jogo => jogo.Genero).Distinct().ToArray();
 
-        public void ProximoGenero() => genero++;
-        public void GeneroAnterior() => genero--;
+        void OnEnable()
+        {
+            Diretor.OnVotarNovamente += ResetarGeneroPos;
+        }
+        void OnDisable()
+        {
+            Diretor.OnVotarNovamente -= ResetarGeneroPos;
+        }
+        private void ResetarGeneroPos()
+        {
+            GeneroPosArray = 0;
+        }
+
+        public void ProximoGenero() => GeneroPosArray++;
+        public void GeneroAnterior() => GeneroPosArray--;
     }
 }

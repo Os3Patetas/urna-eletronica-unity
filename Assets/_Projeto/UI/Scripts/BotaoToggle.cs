@@ -14,7 +14,7 @@ namespace com.Icypeak.VotacaoJogo.UI
         public JogoScriptable Jogo;
         Button _btn;
 
-        public static Action OnSelect;
+        public static Action<JogoScriptable> OnSelect;
         ColorBlock colors;
 
         [SerializeField] Image icone;
@@ -40,7 +40,7 @@ namespace com.Icypeak.VotacaoJogo.UI
 
         private void OnClick()
         {
-            OnSelect?.Invoke();
+            OnSelect?.Invoke(Jogo);
             Select();
         }
 
@@ -53,7 +53,7 @@ namespace com.Icypeak.VotacaoJogo.UI
             _btn.colors = colors;
         }
 
-        private void DeSelect()
+        private void DeSelect(JogoScriptable jogo)
         {
             colors.normalColor = Color.white;
             colors.selectedColor = Color.white;
