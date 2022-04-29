@@ -65,9 +65,12 @@ namespace com.Icypeak.VotacaoJogo.Utils
 
         public void FinishButtonClick()
         {
-            VotacaoUI.SetActive(false);
-            FimVotacaoUI.SetActive(true);
-            OnFinish?.Invoke();
+            if (VotoManager.JogosSelecionados[GeneroManager.GeneroPosArray] is not null)
+            {
+                VotacaoUI.SetActive(false);
+                FimVotacaoUI.SetActive(true);
+                OnFinish?.Invoke();
+            }
         }
 
         public void VotarNovamenteClick()

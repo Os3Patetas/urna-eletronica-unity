@@ -27,8 +27,16 @@ namespace com.Icypeak.VotacaoJogo.UI
             this.gameObject.SetActive(false);
         }
 
-        void OnEnable() => OnSelect += DeSelect;
-        void OnDisable() => OnSelect -= DeSelect;
+        void OnEnable()
+        {
+            OnSelect += DeSelect;
+            FillPanelWithGameCards.OnSyncGameCards += HighlightSelectedGame;
+        }
+        void OnDisable()
+        {
+            OnSelect -= DeSelect;
+            FillPanelWithGameCards.OnSyncGameCards -= HighlightSelectedGame;
+        }
 
         public void Inicializar(JogoScriptable jogo)
         {
@@ -60,6 +68,15 @@ namespace com.Icypeak.VotacaoJogo.UI
             colors.highlightedColor = Color.white;
 
             _btn.colors = colors;
+        }
+
+        private void HighlightSelectedGame()
+        {
+            if (VotoManager.JogosSelecionados[GeneroManager.GeneroPosArray] is null) return;
+            if (VotoManager.JogosSelecionados[GeneroManager.GeneroPosArray].Nome == Jogo.Nome)
+            {
+                Select();
+            }
         }
     }
 }

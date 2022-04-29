@@ -17,12 +17,15 @@ namespace com.Icypeak.VotacaoJogo.Utils
             get => _genero;
             private set
             {
-                _genero = value;
-
-                if (_genero < 0 || _genero > Generos.Length - 1)
-                    _genero = Mathf.Clamp(_genero, 0, Generos.Length);
-                else
+                if (VotoManager.JogosSelecionados[_genero] is not null || value < _genero)
+                {
+                    _genero = value;
                     OnGeneroChange?.Invoke();
+                }
+                else
+                {
+                    print("Nenhum jogo selecionado");
+                }
             }
         }
 
@@ -35,17 +38,13 @@ namespace com.Icypeak.VotacaoJogo.Utils
         void Awake() =>
            Generos = Diretor.ListaJogos.Select(jogo => jogo.Genero).Distinct().ToArray();
 
-        void OnEnable()
-        {
-            Diretor.OnVotarNovamente += ResetarGeneroPos;
-        }
-        void OnDisable()
-        {
-            Diretor.OnVotarNovamente -= ResetarGeneroPos;
-        }
+        void OnEnable() => Diretor.OnVotarNovamente += ResetarGeneroPos;
+        void OnDisable() => Diretor.OnVotarNovamente -= ResetarGeneroPos;
+
         private void ResetarGeneroPos()
         {
-            GeneroPosArray = 0;
+            _genero = 0;
+            OnGeneroChange?.Invoke();
         }
 
         public void ProximoGenero() => GeneroPosArray++;

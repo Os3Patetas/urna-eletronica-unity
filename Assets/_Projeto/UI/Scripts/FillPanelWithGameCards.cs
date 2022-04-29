@@ -1,15 +1,15 @@
 using UnityEngine;
 
-using System.Linq;
+using System;
 
 using com.Icypeak.VotacaoJogo.Utils;
-using com.Icypeak.VotacaoJogo.Jogo;
 
 namespace com.Icypeak.VotacaoJogo.UI
 {
     public class FillPanelWithGameCards : MonoBehaviour
     {
         [SerializeField] GameObject card;
+        public static Action OnSyncGameCards;
 
         void Awake() => SincronizarGameCards();
 
@@ -27,7 +27,9 @@ namespace com.Icypeak.VotacaoJogo.UI
                 var instance = Instantiate(card, this.transform.position, this.transform.rotation);
                 instance.transform.SetParent(this.gameObject.transform);
                 instance.GetComponent<BotaoToggle>().Inicializar(jogo);
+                instance.gameObject.transform.localScale = new Vector3(1, 1, 1);
             }
+            OnSyncGameCards?.Invoke();
         }
     }
 }

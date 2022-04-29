@@ -7,7 +7,7 @@ namespace com.Icypeak.VotacaoJogo.Utils
 {
     public class VotoManager : MonoBehaviour
     {
-        public JogoScriptable[] JogosSelecionados;
+        public static JogoScriptable[] JogosSelecionados;
 
         void Awake() => JogosSelecionados = new JogoScriptable[GeneroManager.Generos.Length];
 
@@ -23,16 +23,16 @@ namespace com.Icypeak.VotacaoJogo.Utils
             Diretor.OnFinish -= ContabilizarVotos;
         }
 
-        void SelecionarJogo(JogoScriptable jogoSelecionado)
-        {
-            JogosSelecionados[GeneroManager.GeneroPosArray] = jogoSelecionado;
-        }
+        void SelecionarJogo(JogoScriptable jogoSelecionado) =>
+             JogosSelecionados[GeneroManager.GeneroPosArray] = jogoSelecionado;
 
         void ContabilizarVotos()
         {
+            int i = 0;
             foreach (var jogo in JogosSelecionados)
             {
                 jogo.Votos++;
+                JogosSelecionados[i++] = null;
             }
         }
     }
